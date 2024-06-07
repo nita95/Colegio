@@ -26,7 +26,7 @@ window.onload = function() {
                     </div>
                     <div class="col-md-6">
                         <label for="nota${i}">Nota</label>
-                        <input type="number" min="10" max="100" class="form-control nota" id="nota${i}" required>
+                        <input type="number" min="0" max="100" class="form-control nota" id="nota${i}" required>
                     </div>
                 `;
                 notasContainer.appendChild(notaDiv);
@@ -53,8 +53,8 @@ window.onload = function() {
                         return;
                     }
 
-                    if (isNaN(nota) || nota < 10 || nota > 100) {
-                        swal("Por favor, ingrese una nota válida entre 10 y 100 para el estudiante " + (i + 1));
+                    if (isNaN(nota) || nota < 0 || nota > 100) {
+                        swal("Por favor, ingrese una nota válida entre 0 y 100 para el estudiante " + (i + 1));
                         return;
                     }
 
@@ -81,18 +81,14 @@ window.onload = function() {
                 `;
                 // Mostrar nota de cada estudiante
                 estudiantes.forEach(est => {
-                    var estado = est.nota >= 60 ? "Aprobado" : "Reprobado";
                     var estudianteDiv = document.createElement("div");
                     estudianteDiv.className = "row";
                     estudianteDiv.innerHTML = `
-                        <div class="col-md-4">
+                        <div class="col-md-6">
                             <p>${est.nombre}</p>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-6">
                             <p>${est.nota}</p>
-                        </div>
-                        <div class="col-md-4">
-                            <p>${estado}</p>
                         </div>
                     `;
                     resultadosDiv.appendChild(estudianteDiv);
