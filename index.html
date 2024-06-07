@@ -1,17 +1,53 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Colegio</title>
-    <script src="imperativa.js"></script>
+    <script src="imperativa.js" defer></script> 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .navbar-custom {
+            background-color: #0b591c; /* Verde */
+        }
+        .navbar-custom .navbar-brand, .navbar-custom .nav-link {
+            color: white;
+        }
+        .subcontenedor {
+            display: flex;
+            align-items: center;
+        }
+    </style>
 </head>
 <body>
-    <div>
+    <!-- Barra superior -->
+    <nav class="navbar navbar-expand-lg navbar-custom">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="/Colegio/logo.png" alt="Unisarc" width="200" height="80">
+            </a>
+        </div>
+    </nav>
 
-
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Bienvenido a tu aula</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label for="cantidadEstudiantes">Ingrese la cantidad de estudiantes</label>
+                            <input type="number" class="form-control" id="cantidadEstudiantes" name="cantidadEstudiantes" required>
+                        </div>
+                        <button type="submit" id="enviarBtn" class="btn btn-primary btn-block">Enviar</button>
+                        <div id="notasContainer" class="mt-3"></div>
+                        <div id="resultados" class="mt-3"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-
-
 </body>
 </html>
