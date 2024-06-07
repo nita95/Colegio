@@ -81,14 +81,18 @@ window.onload = function() {
                 `;
                 // Mostrar nota de cada estudiante
                 estudiantes.forEach(est => {
+                    var estado = est.nota >= 60 ? "Aprobado" : "Reprobado";
                     var estudianteDiv = document.createElement("div");
                     estudianteDiv.className = "row";
                     estudianteDiv.innerHTML = `
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <p>${est.nombre}</p>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <p>${est.nota}</p>
+                        </div>
+                        <div class="col-md-4">
+                            <p>${estado}</p>
                         </div>
                     `;
                     resultadosDiv.appendChild(estudianteDiv);
