@@ -26,7 +26,7 @@ window.onload = function() {
                     </div>
                     <div class="col-md-6">
                         <label for="nota${i}">Nota</label>
-                        <input type="number" min="1" max="100" class="form-control nota" id="nota${i}" required>
+                        <input type="number" min="0" max="100" class="form-control nota" id="nota${i}" required>
                     </div>
                 `;
                 notasContainer.appendChild(notaDiv);
@@ -53,8 +53,8 @@ window.onload = function() {
                         return;
                     }
 
-                    if (isNaN(nota) || nota < 1 || nota > 100) {
-                        swal("Por favor, ingrese una nota válida entre 1 y 100 para el estudiante " + (i + 1));
+                    if (isNaN(nota) || nota < 0 || nota > 100) {
+                        swal("Por favor, ingrese una nota válida entre 0 y 100 para el estudiante " + (i + 1));
                         return;
                     }
 
