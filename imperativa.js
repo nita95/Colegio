@@ -13,7 +13,7 @@ window.onload = function() {
 
         // Verificar si la cantidad ingresada es un número válido
         if (isNaN(cantidadEstudiantes) || cantidadEstudiantes <= 0) {
-            alert("Por favor, ingrese un número válido mayor que cero.");
+            swal("Por favor, ingrese un número válido mayor que cero.");
         } else {
             // Crear campos de entrada para los nombres y las notas
             for (var i = 0; i < cantidadEstudiantes; i++) {
@@ -49,12 +49,12 @@ window.onload = function() {
                     var nota = parseFloat(notasInputs[i].value);
 
                     if (!nombre) {
-                        alert("Por favor, ingrese un nombre para el estudiante " + (i + 1));
+                        swal("Por favor, ingrese un nombre para el estudiante " + (i + 1));
                         return;
                     }
 
                     if (isNaN(nota) || nota < 10 || nota > 100) {
-                        alert("Por favor, ingrese una nota válida entre 10 y 100 para el estudiante " + (i + 1));
+                        swal("Por favor, ingrese una nota válida entre 10 y 100 para el estudiante " + (i + 1));
                         return;
                     }
 
