@@ -1,9 +1,4 @@
 window.onload = function() {
-    var cantidadEstudiantesInput = document.getElementById("cantidadEstudiantes");
-    var enviarBtn = document.getElementById("enviarBtn");
-    var notasContainer = document.getElementById("notasContainer");
-    var resultadosDiv = document.getElementById("resultados");
-
     enviarBtn.onclick = function() {
         var cantidadEstudiantes = parseInt(cantidadEstudiantesInput.value);
 
@@ -69,16 +64,6 @@ window.onload = function() {
                 var sumaNotas = estudiantes.reduce((sum, e) => sum + e.nota, 0);
                 var promedio = sumaNotas / cantidadEstudiantes;
 
-                // Mostrar resultados
-                resultadosDiv.innerHTML = `
-                    <h5>Resultados:</h5>
-                    <p>La calificación más alta es: ${calificacionMasAlta}</p>
-                    <p>La calificación más baja es: ${calificacionMasBaja}</p>
-                    <p>Aprobados: ${aprobados}</p>
-                    <p>Reprobados: ${reprobados}</p>
-                    <p>Promedio de notas es: ${promedio.toFixed(2)}</p>
-                    <h5>Notas de los estudiantes:</h5>
-                `;
                 // Mostrar nota de cada estudiante
                 estudiantes.forEach(est => {
                     var estado = est.nota >= 60 ? "Aprobado" : "Reprobado";
